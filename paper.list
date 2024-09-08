@@ -1,4 +1,5 @@
 # paper
+
 # DOMAIN-SUFFIX,springer.com,DIRECT
 DOMAIN-SUFFIX,sciencedirect.com,DIRECT
 DOMAIN-SUFFIX,ieee.org,DIRECT
@@ -9,3 +10,4 @@ DOMAIN-SUFFIX,iop.org,DIRECT
 DOMAIN-SUFFIX,springer.com,DIRECT
 DOMAIN-SUFFIX,wiris.cloud,DIRECT
 DOMAIN-SUFFIX,wiris.net,DIRECT
+DOMAIN-SUFFIX,webofscience.com
