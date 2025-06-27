@@ -12,6 +12,6 @@ DOMAIN-SUFFIX,iop.org,DIRECT
 DOMAIN-SUFFIX,springer.com,DIRECT
 DOMAIN-SUFFIX,wiris.cloud,DIRECT
 DOMAIN-SUFFIX,wiris.net,DIRECT
-DOMAIN-SUFFIX,webofscience.com
-DOMAIN-SUFFIX,xidian.edu.cn
-DOMAIN-SUFFIX,rsc.org
+DOMAIN-SUFFIX,webofscience.com,DIRECT
+DOMAIN-SUFFIX,xidian.edu.cn,DIRECT
+DOMAIN-SUFFIX,rsc.org,DIRECT
