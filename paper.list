@@ -1,19 +1,19 @@
 # paper
 
-# DOMAIN-SUFFIX,springer.com,DIRECT
-DOMAIN-SUFFIX,sciencedirectassets.com,DIRECT
+# DOMAIN-SUFFIX,springer.com
+DOMAIN-SUFFIX,sciencedirectassets.com
 DOMAIN-SUFFIX,nature.com
 DOMAIN-SUFFIX,springernature.com
-DOMAIN-SUFFIX,xidian.edu.cn,DIRECT
-DOMAIN-SUFFIX,sciencedirect.com,DIRECT
-DOMAIN-SUFFIX,ieee.org,DIRECT
-DOMAIN-SUFFIX,acs.org,DIRECT
-DOMAIN-SUFFIX,cnki.net,DIRECT
-DOMAIN-SUFFIX,aip.org,DIRECT
-DOMAIN-SUFFIX,iop.org,DIRECT
-DOMAIN-SUFFIX,springer.com,DIRECT
-DOMAIN-SUFFIX,wiris.cloud,DIRECT
-DOMAIN-SUFFIX,wiris.net,DIRECT
-DOMAIN-SUFFIX,webofscience.com,DIRECT
-DOMAIN-SUFFIX,xidian.edu.cn,DIRECT
-DOMAIN-SUFFIX,rsc.org,DIRECT
+DOMAIN-SUFFIX,xidian.edu.cn
+DOMAIN-SUFFIX,sciencedirect.com
+DOMAIN-SUFFIX,ieee.org
+DOMAIN-SUFFIX,acs.org
+DOMAIN-SUFFIX,cnki.net
+DOMAIN-SUFFIX,aip.org
+DOMAIN-SUFFIX,iop.org
+DOMAIN-SUFFIX,springer.com
+DOMAIN-SUFFIX,wiris.cloud
+DOMAIN-SUFFIX,wiris.net
+DOMAIN-SUFFIX,webofscience.com
+DOMAIN-SUFFIX,xidian.edu.cn
+DOMAIN-SUFFIX,rsc.org
