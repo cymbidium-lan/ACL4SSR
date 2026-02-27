@@ -3,14 +3,7 @@
 # =========================================================
 
 proxy-groups:
-  # --- 1. ORI 自动测速组 (重命名自原来的 ori) ---
-  - name: ori-test
-    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Cat.png # 可爱小猫图标
-    type: url-test
-    include-all: true
-    filter: "(?i)^ori"
-    interval: 300
-    tolerance: 50
+
 
   # --- 2. 新增的 ORI 总策略组 (包含测速组和所有 ori 节点) ---
   - name: ori
@@ -304,6 +297,15 @@ proxy-groups:
       - 韩国节点
       - 手动切换
 
+  # --- 1. ORI 自动测速组 (重命名自原来的 ori) ---
+  - name: ori-test
+    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Cat.png # 可爱小猫图标
+    type: url-test
+    include-all: true
+    filter: "(?i)^ori"
+    interval: 300
+    tolerance: 50
+    
   - name: 香港节点
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png
     include-all: true
