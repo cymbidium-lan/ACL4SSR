@@ -1,22 +1,31 @@
 # =========================================================
-# Clash 完整分流配置文件 (已集成 Paper 规则 & ORI 专项组)
+# Clash 完整分流配置文件 (Paper 规则 + 嵌套 ORI 策略)
 # =========================================================
 
 proxy-groups:
-  # --- 新增的 ORI 专项组 ---
-  - name: ori
-    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/World.png
+  # --- 1. ORI 自动测速组 (重命名自原来的 ori) ---
+  - name: ori-test
+    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Cat.png # 可爱小猫图标
     type: url-test
     include-all: true
-    filter: "(?i)^ori" # 匹配所有以 ori 开头的节点 (不区分大小写)
+    filter: "(?i)^ori"
     interval: 300
     tolerance: 50
+
+  # --- 2. 新增的 ORI 总策略组 (包含测速组和所有 ori 节点) ---
+  - name: ori
+    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Panda.png # 可爱小熊猫图标
+    type: select
+    include-all: true
+    filter: "(?i)^ori"
+    proxies:
+      - ori-test      # 将测速组放在第一位，默认自动选择最快的
 
   - name: 节点选择
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Proxy.png
     type: select
     proxies:
-      - ori            # 已添加
+      - ori            # 指向新的总策略组
       - 自动选择
       - 台湾节点
       - 狮城节点
@@ -43,7 +52,7 @@ proxy-groups:
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Telegram.png
     type: select
     proxies:
-      - ori            # 已添加
+      - ori            # 已更新
       - 节点选择
       - 自动选择
       - 狮城节点
@@ -91,7 +100,7 @@ proxy-groups:
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/YouTube.png
     type: select
     proxies:
-      - ori            # 已添加
+      - ori            # 已更新
       - 节点选择
       - 自动选择
       - 狮城节点
@@ -140,7 +149,7 @@ proxy-groups:
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/ForeignMedia.png
     type: select
     proxies:
-      - ori            # 已添加
+      - ori            # 已更新
       - 节点选择
       - 自动选择
       - 香港节点
@@ -283,7 +292,7 @@ proxy-groups:
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Final.png
     type: select
     proxies:
-      - ori            # 已添加
+      - ori            # 已更新
       - 节点选择
       - 自动选择
       - DIRECT
@@ -355,7 +364,6 @@ proxy-groups:
     type: select
     proxies:
       - 节点选择
-      - ori
       - 手动切换
       - 自动选择
       - 电报消息
@@ -394,6 +402,7 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+  # ... 其他 provider 保持不变 ...
   LocalAreaNetwork:
     url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/LocalAreaNetwork.list
     path: ./ruleset/LocalAreaNetwork.list
