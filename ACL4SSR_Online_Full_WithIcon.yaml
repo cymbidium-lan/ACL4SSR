@@ -10,9 +10,8 @@ proxy-groups:
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Panda.png # 可爱小熊猫图标
     type: select
     include-all: true
-    filter: "(?i)^ori"
-    proxies:
-      - ori-test      # 将测速组放在第一位，默认自动选择最快的
+    filter: "(?i)^(ori|zgo)"
+
 
   - name: 节点选择
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Proxy.png
@@ -61,6 +60,7 @@ proxy-groups:
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Bot.png
     type: select
     proxies:
+      - ori
       - 节点选择
       - 自动选择
       - AI-UNHK
@@ -79,6 +79,7 @@ proxy-groups:
     include-all: true
     exclude-filter: (?i)港|HK|hk|Hong Kong|HongKong|hongkong
     proxies:
+      - ori
       - 节点选择
       - 自动选择
       - 狮城节点
@@ -298,13 +299,13 @@ proxy-groups:
       - 手动切换
 
   # --- 1. ORI 自动测速组 (重命名自原来的 ori) ---
-  - name: ori-test
-    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Cat.png # 可爱小猫图标
-    type: url-test
-    include-all: true
-    filter: "(?i)^ori"
-    interval: 300
-    tolerance: 50
+#  - name: ori-test
+ #   icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Cat.png # 可爱小猫图标
+  #  type: url-test
+  #  include-all: true
+  #  filter: "(?i)^(ori|zgo)"
+   # interval: 300
+   # tolerance: 50
     
   - name: 香港节点
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png
@@ -628,6 +629,7 @@ rules:
   - "RULE-SET,UnBan,全球直连"
   - "RULE-SET,BanAD,广告拦截"
   - "RULE-SET,BanProgramAD,应用净化"
+  - "RULE-SET,OpenAi,OpenAi"
   - "RULE-SET,GoogleFCM,谷歌FCM"
   - "RULE-SET,GoogleCN,全球直连"
   - "RULE-SET,SteamCN,全球直连"
@@ -638,7 +640,6 @@ rules:
   - "RULE-SET,Microsoft,微软服务"
   - "RULE-SET,Apple,苹果服务"
   - "RULE-SET,Telegram,电报消息"
-  - "RULE-SET,OpenAi,OpenAi"
   - "RULE-SET,NetEaseMusic,网易音乐"
   - "RULE-SET,Epic,游戏平台"
   - "RULE-SET,Origin,游戏平台"
