@@ -47,7 +47,7 @@ proxy-groups:
   - 手动切换
   - DIRECT
 - name: Twitter
-  icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Twitter.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/X.png
   type: select
   proxies:
   - ori
