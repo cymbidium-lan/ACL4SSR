@@ -85,7 +85,6 @@ proxy-groups:
   proxies:
   - ori
   - 节点选择
-  - 自动选择
   - 狮城节点
   - 台湾节点
   - 日本节点
