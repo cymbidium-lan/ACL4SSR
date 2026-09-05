@@ -1,3 +1,6 @@
+port: 7890
+
+
 proxy-groups:
 - name: ori
   icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Panda.png
