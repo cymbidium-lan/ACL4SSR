@@ -335,15 +335,12 @@ rule-providers:
     format: text
     type: http
 rules:
-- DOMAIN-SUFFIX,gemini.google.com,AI-UNHK
-- DOMAIN-SUFFIX,bard.google.com,AI-UNHK
-- DOMAIN-SUFFIX,generativelanguage.googleapis.com,AI-UNHK
-- DOMAIN-SUFFIX,aistudio.google.com,AI-UNHK
+- DOMAIN-KEYWORD,gemini,AI-UNHK 
+- DOMAIN-KEYWORD,google,AI-UNHK 
+- DOMAIN-SUFFIX,googleapis.com,AI-UNHK 
+- DOMAIN-SUFFIX,gstatic.com,AI-UNHK 
+- DOMAIN-SUFFIX,googleusercontent.com,AI-UNHK 
 - DOMAIN-SUFFIX,ai.google.dev,AI-UNHK
-- DOMAIN-SUFFIX,alkali.app,AI-UNHK
-- DOMAIN-KEYWORD,gemini,AI-UNHK
-- DOMAIN-SUFFIX,accounts.google.com,AI-UNHK
-- DOMAIN-SUFFIX,myaccount.google.com,AI-UNHK
 - RULE-SET,LocalAreaNetwork,全球直连
 - RULE-SET,UnBan,全球直连
 - RULE-SET,BanAD,广告拦截
