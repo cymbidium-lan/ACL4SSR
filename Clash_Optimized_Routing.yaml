@@ -105,44 +105,6 @@ proxy-groups:
   - 韩国节点
   - 手动切换
   - DIRECT
-- name: 国外媒体
-  icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/ForeignMedia.png
-  type: select
-  proxies:
-  - ori
-  - 节点选择
-  - 自动选择
-  - 香港节点
-  - 台湾节点
-  - 狮城节点
-  - 日本节点
-  - 美国节点
-  - 韩国节点
-  - 手动切换
-  - DIRECT
-- name: 国内媒体
-  icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/DomesticMedia.png
-  type: select
-  proxies:
-  - DIRECT
-  - 香港节点
-  - 台湾节点
-  - 狮城节点
-  - 日本节点
-  - 手动切换
-- name: 谷歌FCM
-  icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Google_Search.png
-  type: select
-  proxies:
-  - DIRECT
-  - 节点选择
-  - 美国节点
-  - 台湾节点
-  - 狮城节点
-  - 日本节点
-  - 韩国节点
-  - 香港节点
-  - 手动切换
 - name: 苹果服务
   icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Apple.png
   type: select
@@ -245,9 +207,6 @@ proxy-groups:
   - OpenAi
   - AI-UNHK
   - 油管视频
-  - 国外媒体
-  - 国内媒体
-  - 谷歌FCM
   - 苹果服务
   - 全球直连
   - 广告拦截
@@ -295,13 +254,6 @@ rule-providers:
     interval: 86400
     format: text
     type: http
-  GoogleFCM:
-    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/GoogleFCM.list
-    path: ./ruleset/GoogleFCM.list
-    behavior: classical
-    interval: 86400
-    format: text
-    type: http
   GoogleCN:
     url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/GoogleCN.list
     path: ./ruleset/GoogleCN.list
@@ -340,20 +292,6 @@ rule-providers:
   YouTube:
     url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/YouTube.list
     path: ./ruleset/YouTube.list
-    behavior: classical
-    interval: 86400
-    format: text
-    type: http
-  ChinaMedia:
-    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/ChinaMedia.list
-    path: ./ruleset/ChinaMedia.list
-    behavior: classical
-    interval: 86400
-    format: text
-    type: http
-  ProxyMedia:
-    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/ProxyMedia.list
-    path: ./ruleset/ProxyMedia.list
     behavior: classical
     interval: 86400
     format: text
@@ -408,7 +346,6 @@ rules:
 - RULE-SET,BanAD,广告拦截
 - RULE-SET,BanProgramAD,应用净化
 - RULE-SET,OpenAi,OpenAi
-- RULE-SET,GoogleFCM,谷歌FCM
 - RULE-SET,GoogleCN,全球直连
 - RULE-SET,AI-MIX,AI-UNHK
 - RULE-SET,paper,全球直连
@@ -416,8 +353,6 @@ rules:
 - RULE-SET,Telegram,电报消息
 - RULE-SET,Twitter,Twitter
 - RULE-SET,YouTube,油管视频
-- RULE-SET,ChinaMedia,国内媒体
-- RULE-SET,ProxyMedia,国外媒体
 - RULE-SET,ProxyGFWlist,节点选择
 - RULE-SET,ChinaDomain,全球直连
 - RULE-SET,ChinaCompanyIp,全球直连
