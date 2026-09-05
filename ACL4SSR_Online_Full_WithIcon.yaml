@@ -625,6 +625,17 @@ rule-providers:
     type: http
 
 rules:
+# --- 新增：强制 Gemini 与 Google 账号鉴权走同一 IP ---
+  - "DOMAIN-SUFFIX,gemini.google.com,AI-UNHK"
+  - "DOMAIN-SUFFIX,bard.google.com,AI-UNHK"
+  - "DOMAIN-SUFFIX,generativelanguage.googleapis.com,AI-UNHK"
+  - "DOMAIN-SUFFIX,aistudio.google.com,AI-UNHK"
+  - "DOMAIN-SUFFIX,ai.google.dev,AI-UNHK"
+  - "DOMAIN-SUFFIX,alkali.app,AI-UNHK"
+  - "DOMAIN-KEYWORD,gemini,AI-UNHK"
+  # 关键：避免账号验证走常规节点导致的 IP 割裂
+  - "DOMAIN-SUFFIX,accounts.google.com,AI-UNHK" 
+  - "DOMAIN-SUFFIX,myaccount.google.com,AI-UNHK"
   - "RULE-SET,LocalAreaNetwork,全球直连"
   - "RULE-SET,UnBan,全球直连"
   - "RULE-SET,BanAD,广告拦截"
