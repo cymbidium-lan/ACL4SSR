@@ -1,10 +1,12 @@
 /**
- * Sub-Store -> MerlinClash order fix + IPv6-safe rules
+ * Sub-Store -> MerlinClash order fix + IPv6-safe local/multicast rules
  *
  * Important:
  * - This script keeps port before proxies for MerlinClash subscription import.
  * - It keeps all real config after proxies so MerlinClash's preprocessing does not cut it off.
  * - IPv6 transparent proxy itself must still be enabled in MerlinClash's IPv6 switch.
+ * - Local/private and multicast traffic is forced DIRECT so Bonjour/mDNS and LAN discovery
+ *   are not sent into TCP/UDP transparent proxy.
  */
 function main(config) {
   if (!config || typeof config !== "object" || Array.isArray(config)) {
@@ -19,20 +21,23 @@ function main(config) {
     throw new Error("MerlinClash_Order_Fix_IPv6: proxies array not found");
   }
 
-  // Add IPv6 local/private direct rules before all other routing rules.
-  // These avoid sending loopback, ULA and link-local IPv6 traffic to the proxy.
   if (!Array.isArray(config.rules)) {
     config.rules = [];
   }
 
-  const ipv6LocalRules = [
+  // Keep LAN/private/multicast traffic out of transparent proxy.
+  // ff00::/8 includes IPv6 multicast such as mDNS ff02::fb.
+  // 224.0.0.0/4 includes IPv4 multicast such as mDNS 224.0.0.251.
+  const localDirectRules = [
+    "IP-CIDR,224.0.0.0/4,全球直连,no-resolve",
     "IP-CIDR6,::1/128,全球直连,no-resolve",
     "IP-CIDR6,fc00::/7,全球直连,no-resolve",
-    "IP-CIDR6,fe80::/10,全球直连,no-resolve"
+    "IP-CIDR6,fe80::/10,全球直连,no-resolve",
+    "IP-CIDR6,ff00::/8,全球直连,no-resolve"
   ];
 
   const existing = new Set(config.rules);
-  const toAdd = ipv6LocalRules.filter(rule => !existing.has(rule));
+  const toAdd = localDirectRules.filter(rule => !existing.has(rule));
   config.rules = [...toAdd, ...config.rules];
 
   // MerlinClash import quirk:
