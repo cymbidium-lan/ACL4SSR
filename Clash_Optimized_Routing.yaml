@@ -33,6 +33,7 @@ proxy-groups:
 - name: 电报消息
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
   type: select
+  include-all: true
   proxies:
   - ori
   - 节点选择
