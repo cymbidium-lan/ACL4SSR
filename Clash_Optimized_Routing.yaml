@@ -69,7 +69,7 @@ proxy-groups:
   - ori
   - 节点选择
   - 自动选择
-  - AI-UNHK
+  - AI节点
   - 狮城节点
   - 台湾节点
   - 日本节点
@@ -78,11 +78,10 @@ proxy-groups:
   - 香港节点
   - 手动切换
   - DIRECT
-- name: AI-UNHK
+- name: AI节点
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/AI.png
   type: select
   include-all: true
-  exclude-filter: (?i)港|HK|hk|Hong Kong|HongKong|hongkong
   proxies:
   - ori
   - 节点选择
@@ -208,7 +207,7 @@ proxy-groups:
   - 电报消息
   - Twitter
   - OpenAi
-  - AI-UNHK
+  - AI节点
   - 油管视频
   - 苹果服务
   - 全球直连
@@ -335,24 +334,24 @@ rule-providers:
     format: text
     type: http
 rules:
-- DOMAIN-KEYWORD,gemini,AI-UNHK 
-- DOMAIN-KEYWORD,google,AI-UNHK 
-- DOMAIN-SUFFIX,googleapis.com,AI-UNHK 
-- DOMAIN-SUFFIX,gstatic.com,AI-UNHK 
-- DOMAIN-SUFFIX,googleusercontent.com,AI-UNHK 
-- DOMAIN-SUFFIX,ai.google.dev,AI-UNHK
+- RULE-SET,OpenAi,OpenAi
+- DOMAIN-KEYWORD,gemini,AI节点
+- DOMAIN-SUFFIX,ai.google.dev,AI节点
+- RULE-SET,YouTube,油管视频
+- DOMAIN-KEYWORD,google,AI节点
+- DOMAIN-SUFFIX,googleapis.com,AI节点
+- DOMAIN-SUFFIX,gstatic.com,AI节点
+- DOMAIN-SUFFIX,googleusercontent.com,AI节点
 - RULE-SET,LocalAreaNetwork,全球直连
 - RULE-SET,UnBan,全球直连
 - RULE-SET,BanAD,广告拦截
 - RULE-SET,BanProgramAD,应用净化
-- RULE-SET,OpenAi,OpenAi
 - RULE-SET,GoogleCN,全球直连
-- RULE-SET,AI-MIX,AI-UNHK
+- RULE-SET,AI-MIX,AI节点
 - RULE-SET,paper,全球直连
 - RULE-SET,Apple,苹果服务
 - RULE-SET,Telegram,电报消息
 - RULE-SET,Twitter,Twitter
-- RULE-SET,YouTube,油管视频
 - RULE-SET,ProxyGFWlist,节点选择
 - RULE-SET,ChinaDomain,全球直连
 - RULE-SET,ChinaCompanyIp,全球直连
