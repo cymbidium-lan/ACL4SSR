@@ -66,7 +66,7 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Bot.png
   type: select
   include-all: true
-  filter: (?i)^ori
+  filter: (?i)^(ori|zgo)
   proxies:
   - ori
   - 节点选择
