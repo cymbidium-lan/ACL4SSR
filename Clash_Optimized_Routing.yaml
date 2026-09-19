@@ -65,6 +65,8 @@ proxy-groups:
 - name: OpenAi
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Bot.png
   type: select
+  include-all: true
+  filter: (?i)^ori
   proxies:
   - ori
   - 节点选择
